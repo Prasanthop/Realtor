@@ -7,11 +7,14 @@ import Signin from './pages/Signin'
 import Offers from './pages/Offers'
 import Signup from './pages/Signup'
 import Header from './components/Header'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
 function App() {
   return (
+    <>
     <Router>
        <Header />
         <Routes>        
@@ -24,6 +27,19 @@ function App() {
           
         </Routes>
     </Router>
+    <ToastContainer
+    position="bottom-center"
+    autoClose={5000}
+    hideProgressBar={false}
+    newestOnTop={false}
+    closeOnClick
+    rtl={false}
+    pauseOnFocusLoss
+    draggable
+    pauseOnHover
+    theme="dark"
+    />
+    </>
   )
 }
 

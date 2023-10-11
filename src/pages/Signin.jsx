@@ -18,6 +18,10 @@ function Signin() {
     }))
   }
 
+  function onSubmit(e){
+    e.preventDefault()
+  }
+
   return (
     <section>
       <h1 className='text-3xl text-center mt-6 font-bold '>Sign In</h1>
@@ -26,10 +30,10 @@ function Signin() {
           <img className='w-full rounded-2xl' src="https://images.unsplash.com/flagged/photo-1564767609342-620cb19b2357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1973&q=80" alt="key" />
         </div>
         <div  className='w-full md:w-[67%] lg:w-[40%] lg:ml-20'>
-          <form>
+          <form onSubmit={onSubmit}>
               <input type="email" id='email' value={email}  className='w-full px-4 py-2 text-xl text-gray-700 bg-white border-gray-300 rounded transition ease-in-out mb-6' onChange={handleChange} placeholder='Enter Email'/>
               <div className='relative mb-6'>
-              <input type={showPassword ? "text":"password"} id='password' value={password}  className='w-full px-4 py-2 text-xl text-gray-700 bg-white border-gray-300 rounded transition ease-in-out' onChange={handleChange} placeholder='Password'/>
+              <input type={showPassword ? "text":"password"} autoComplete='password' id='password' value={password}  className='w-full px-4 py-2 text-xl text-gray-700 bg-white border-gray-300 rounded transition ease-in-out' onChange={handleChange} placeholder='Password'/>
               <div onClick={()=>setShowPassword((prevState) => !prevState)} className='absolute right-3 top-3 text-xl cursor-pointer'>{showPassword ?(<AiFillEyeInvisible/>):(<AiFillEye/>) }</div>
               </div>
               <div className='flex justify-between whitespace-nowrap text-sm sm:text-lg'>
